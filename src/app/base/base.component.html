@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <h5>Select a Date and Time</h5>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-12 col-md-4 form-group">
+            <input type="text" class="form-control" placeholder="Select Date" bsDatepicker
+                [bsConfig]="{ isAnimated: true, dateInputFormat: 'MMMM Do YYYY'}" [datesEnabled]="enabledDates"
+                (bsValueChange)="onValueChange($event)">
+        </div>
+    </div>
+    <br>
+    <div *ngIf="slotsSection">
+        <div class="row">
+            <div class="col-xs-12 col-12 col-md-4 form-group">
+                <h5 style="background-color:#f9f9f9;text-align:center;padding:5px">Available slots for {{selectedDate}}
+                </h5>
+            </div>
+        </div>
+        <div class="row" *ngFor="let item of slots" style="padding:3px;">
+            <div class="col-xs-12 col-12 col-md-4 form-group">
+                <button id="button" style="background-color:white;width:100%;border:2px solid lightblue"
+                    (click)="timeSelected(item)">
+                    <h6 style="text-align:center;padding:5px"><span
+                            style="background-color: lightgreen;width:10px;height:10px;border-radius:50%;display:inline-block;"></span>&nbsp;{{item}}
+                    </h6>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

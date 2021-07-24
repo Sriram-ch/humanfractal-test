@@ -2,26 +2,24 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
 
-## Development server
+## Development Setup
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run  `npm install` & `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Components 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+I have created a Base Component with the selector `<app-base>` which holds the calender and takes Input json in the given format and emits the selected date and time slot.
 
-## Build
+## Modules used
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+To generate the datePicker which enables and disables specific dates I have used Bootstrap Datepicker since with HTML5 Date picker functionalites like these were limited.
 
-## Running unit tests
+## Application
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The Base Component holds complete logic for Calender which can be used anywhere in the project with injecting its  instance `<app-base>`.Here the Base Component which is our child component is injected into `app.component.html` which acts as parent component. The Json data of all the available dates and slots is mentioned in `app.component.ts` which acts as input to `<app-base>`. The Output when the date and time slot is selected is catched at the parent component by the function name `displaySelected()` which then logs to console.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
